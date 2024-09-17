@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Favorite View</title>
+  <meta name="description" content="あなたの「お気に入りの景色」を見つけてください。旅の情報＆予約サイト">
   <link rel="stylesheet" href="style.css">  
 </head>
 
@@ -12,70 +13,70 @@
     <a href="index.html" id="logo">
     <img src="images/logo_header.png" alt="トップページに戻る">
     </a>
-    <nav id="header">
+    <nav class="header">
       <ul>
-        <li><a href="reccomend">おすすめ特集</a></li>
-        <li><a href="travelblog">スタッフの海外旅行記</a></li>
-        <li><a href="service">特典・サービス</a></li>
-        <li><a href="contact">お問い合わせ</a></li>
+        <li><a href="#home">ホーム</a></li>
+        <li><a href="#reccomend">おすすめ特集</a></li>
+        <li><a href="#travelblog">スタッフの海外旅行記</a></li>
+        <li><a href="#service">特典・サービス</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+        <img src="images/ico_zoom.png" alt="ズームする">
       </ul>
     </nav>
   </header>
   
   <main>
     <article>
-      <section id="main-visual">
-        <div id="main-message">
-          <p>フェイバリット・ビュー</p>
-          <p>あなたの「お気に入りの景色」を見つけてください</p>
-        </div>
-        <img src="images/kv.png" alt="風車のついた家の画像">
-      </section>
+      <div class="main-message">
+        <p>フェイバリット・ビュー</p>
+        <p>あなたの「お気に入りの景色」を見つけてください</p>
+        <button class="main-button" type="button"><a href="#">もっと見る</a></button>
+      </div>
 
       <section id="reccomend">
-        <h2 class="reccomend-h2">おすすめ特集</h2>
+        <h1>おすすめ特集</h1>
         <p>フェイバリット・ビューがおすすめする格安海外旅行です。気になったプランがあればすぐご予約を！</p>
-      <div id="reccomend-flex">
+      <div class="reccomend-flex">
         <div>
-          <img id="reccomend-photo1" src="images/favorite01.png" alt="プーケットの海の画像">
+          <img class="reccomend-photo1" src="images/favorite01.png" alt="プーケットの海の画像">
           <h3>夢心地のプーケット！</h3>
-          <h2>￥36,800～￥122,000</h2>
+          <p class="price">￥36,800～￥122,000</p>
           <p>
           お得な欲ばり２ヵ国間遊スペシャル！マレーシア＆プーケット島５日間
           </p>
         </div>
         <div>
-          <img id="reccomend-photo2" src="images/favorite02.png" alt="スピリチュアルタイの建物の画像">
+          <img class="reccomend-photo2" src="images/favorite02.png" alt="スピリチュアルタイの建物の画像">
           <h3>スピリチュアルタイ！</h3>
-          <h2>￥52,800～￥123.800</h2>
+          <p class="price">￥52,800～￥123.800</p>
           <p>
             アユタヤ遺跡＆ バンパイン離宮観光付き！マンダリンセンターポイント2泊4日
           </p>
         </div>
         <div>
-          <img id="reccomend-photo3" src="images/favorite03.png" alt="サントリーニ島の画像">
+          <img class="reccomend-photo3" src="images/favorite03.png" alt="サントリーニ島の画像">
           <h3>憧れのサントリーニ島！</h3>
-          <h2>￥169,800～￥245,800</h2>
+          <p class="price">￥169,800～￥245,800</p>
           <p>
             街歩きが楽しめるフィラ地区に２連泊。サントリーニ＆アテネ６日間
           </p>
         </div>
       </div>
       <div>
-        <img id="reccomend-photo4" src="images/favorite04.png" alt="ヨセミテの山の画像">
+        <img class="reccomend-photo4" src="images/favorite04.png" alt="ヨセミテの山の画像">
         <h3>ヨセミテで大自然満喫！</h3>
-        <h2>￥41,029～￥159,800</h2>
+        <p class="price">￥41,029～￥159,800</p>
         <p>
           世界遺産ヨセミテ国立公園、西洋岸人気都市を訪ねる５日間。
         </p>
       </div>
-      <button class="reccomend-utton" type="button">もっと見る</button>
+      <button class="reccomend-button" type="button"><a href="#">もっと見る</a></button>
       </div>
       </section>
 
       <section id="tour-search">
-        <h2 class="tour-title">海外ツアーを探す</h2>
-      <div id="tour-flex">
+        <h1>海外ツアーを探す</h1>
+      <div class="tour-flex">
         <div class="map">
             <ul class="area">
             <li><a href="#">北アメリカ</a></li>
@@ -104,7 +105,7 @@
             <input type="date" id="date" name="date">
 
             <label for="destination">行き先</label>
-            <select id="destination" name="destination">
+            <select class="destination" name="destination">
               <option value="">選択してください</option>
               <option value="tokyo">北アメリカ</option>
               <option value="tokyo">アフリカ・中東</option>
@@ -115,8 +116,7 @@
             </select>
 
             <label for="keyword">キーワードで探す</label>
-            <input type="text" id="keyword" name="keyword" placeholder="行きたい国や地名を入力してください">
-
+            <input type="search" id="keyword" name="keyword" placeholder="行きたい国や地名を入力してください">
             <button type="submit">検索</button>
           </form>
         </div>
@@ -124,57 +124,57 @@
       </section>
 
       <section id="travelblog">
-        <h2 class="travelblog-title">スタッフの海外旅行記</h2>
-      <div id="travelblog-flex">
+        <h1>スタッフの海外旅行記</h1>
+      <div class="travelblog-flex">
         <div>
-          <img id="travelblog" src="images/blog01.png">
-          <p>パリ・ルーブル</p>
+          <img class="travelblog" src="images/blog01.png">
+          <h2>パリ・ルーブル</h2>
           <p>
             パリは歩いているだけで本当に楽しかったです。<br>
             <br>
             (ヨーロッパ担当スタッフA)
         </div>
         <div>
-          <img id="travelblog" src="images/blog02.png">
-          <p>アンテロープキャニオン</p>
+          <img class="travelblog" src="images/blog02.png">
+          <h2>アンテロープキャニオン</h2>
           <p>
             うっとりするような曲線とやわらかな色に差し込む陽の光が幻想的でした！<br>
             <br>
             (ヨーロッパ担当スタッフH)
         </div>
         <div>
-          <img id="travelblog" src="images/blog03.png">
-          <p>アイスランド</p>
+          <img class="travelblog" src="images/blog03.png">
+          <h2>アイスランド</h2>
           <p>
             セリャランスフォス「は、透けるような滝でまさに絶景でした。<br>
             <br>
             (ヨーロッパ担当スタッフK)
         </div>
         <div>
-          <img id="travelblog" src="images/blog04.png">
-          <p>タイ・サムイ島</p>
+          <img class="travelblog" src="images/blog04.png">
+          <h2>タイ・サムイ島</h2>
           <p>
             海がキレイ！プーケットより断然サムイ島です！<br>
             <br>
             (ヨーロッパ担当スタッフM)
         </div>
         <div>
-          <img id="travelblog" src="images/blog05.png">
-          <p>イタリア・ヴェネチア</p>
+          <img class="travelblog" src="images/blog05.png">
+          <h2>イタリア・ヴェネチア</h2>
           <p>
             さよならサン・マルコ。一緒に一度は行っておきたい場所。<br>
             <br>
             (ヨーロッパ担当スタッフA)
         </div>
         <div>
-          <img id="travelblog" src="images/blog06.png">
-          <p>ノイシュバンシュタイン城</p>
+          <img class="travelblog" src="images/blog06.png">
+          <h2>ノイシュバンシュタイン城</h2>
           <p>
             初めて見るノイシュバンシュタイン城にちょっとテンションが高くなります。<br>
             <br>
             (ヨーロッパ担当スタッフS)
         </div>
-        <button class="reccomend-utton" type="button">もっと見る</button>
+        <button class="tracelblog" type="button"><a href="#">もっと見る</a></button>
       </div>
       </section>
     </article>
@@ -184,33 +184,30 @@
     <a href="index.html" id="logo">
       <img src="images/logo_footer.png" alt="トップページに戻る">
       </a>
-      <p>〒151-0051 東京都渋谷区千駄ヶ谷 2-15-62</p>
-      <img src="images/ico_phone.png">
-        <p>03-5690-9842</p>
-      <img src="images/ico_mail.png">
-        <p>favo_view@co.jp</p>
-        <img src="images/ico_fb.png" alt="メールのアイコン">
-        <img src="images/ico_tw.png" alt="メールのアイコン">
-        <img src="images/ico_ins.png" alt="メールのアイコン">
-      <nav id="footer01">
-        <ul>
-          <li><a href="reccomend">おすすめ特集</a></li>
-          <li><a href="travelblog">スタッフの海外旅行記</a></li>
-          <li><a href="service">特典・サービス</a></li>
-          <li><a href="contact">お問い合わせ</a></li>
-        </ul>
-      </nav>
-      <nav id="footer02">
-        <ul>
-          <li><a href="support">トラベルサポート</a></li>
-          <li><a href="insurance">海外旅行保険</a></li>
-          <li><a href="policy">保険募集に関する勧誘方針及び販売方法</a></li>
-          <li><a href="safety">外務省海外安全情報</a></li>
-          <li><a href="health">厚生労働省感染情報</a></li>
-          <li><a href="privacy">個人情報保護方針</a></li>
-        </ul>
-      </nav>
-      <p>&copy; 2018 Favorite view. All Rights Reserved.</p>
+    <ul>
+      <li><p>〒151-0051 東京都渋谷区千駄ヶ谷 2-15-62</p></li>
+      <li><p>03-5690-9842</p></li>
+      <li><p>favo_view@co.jp</p></li>
+      <li><img src="images/ico_fb.png" alt="メールのアイコン"></li>         <li><img src="images/ico_tw.png" alt="メールのアイコン"></li>
+      <li><img src="images/ico_ins.png" alt="メールのアイコン"></li>
+    </ul>
+    <nav>
+      <ul class="footer01">
+        <li><a href="#reccomend">おすすめ特集</a></li>
+        <li><a href="#travelblog">スタッフの海外旅行記</a></li>
+        <li><a href="#">特典・サービス</a></li>
+        <li><a href="#">お問い合わせ</a></li>
+      </ul>
+      <ul class="footer02">
+        <li><a href="support">トラベルサポート</a></li>
+        <li><a href="insurance">海外旅行保険</a></li>
+        <li><a href="policy">保険募集に関する勧誘方針及び販売方法</a></li>
+        <li><a href="safety">外務省海外安全情報</a></li>
+        <li><a href="health">厚生労働省感染情報</a></li>
+        <li><a href="privacy">個人情報保護方針</a></li>
+      </ul>
+    </nav>
+    <p class="copyright">&copy; 2018 Favorite view. All Rights Reserved.</p>
   </footer>
 </body>
 </html>

@@ -5,3 +5,11 @@
   width:100%;                                            /* 横幅のサイズを指定    */
   height:400px;                                          /* 縦幅のサイズを指定    */
 }
+
+.main-message {
+  background-image: url('./images/kv.png');
+  background-repeat:  no-repeat;                         /* 画像の繰り返しを指定  */                 background-position: left;                     /* 画像の表示位置を指定  */
+  /* background-size:contain;                               画像のサイズを指定    */
+  width:100%;                                            /* 横幅のサイズを指定    */
+  height:400px;                                          /* 縦幅のサイズを指定    */
+}
