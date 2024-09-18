@@ -1,35 +1,4 @@
-.map {
-  background-image: url('./images/map.png');
-  background-repeat:  no-repeat;                         /* 画像の繰り返しを指定  */
-  background-position: left;                             /* 画像の表示位置を指定  */
-  background-size:contain;                               /* 画像のサイズを指定    */
-  width:100%;                                            /* 横幅のサイズを指定    */
-  height:400px;                                          /* 縦幅のサイズを指定    */
-}
-
-.main-message {
-  background-image: url('./images/kv.png');
-  background-repeat:  no-repeat;                         /* 画像の繰り返しを指定  */
-  background-position: left;                             /* 画像の表示位置を指定  */
-  background-size:contain;                               /*画像のサイズを指定    */
-  width:100%;                                            /* 横幅のサイズを指定    */
-  height:400px;                                          /* 縦幅のサイズを指定    */
-}
-
-.flex {
-  display: flex;
-}
-
-.google-fonts {
-  /* ここにGoogle Fontsを指定します */
-  font-family: "Noto Sans JP", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  }
-  
-
-  /*================================= リセット */
+/*================================= リセット */
 html {
 	font-size: 62.5%; /* font-sizeで10pxを1remで指定するための準備 */
 }
@@ -98,10 +67,13 @@ button {
 	appearance: none;/* ブラウザのスタイルをリセット */
 }
 
+
+/*=================================ヘッダー設定 */
+
 header {
-  display: flex; /* 横並びにする */
-  justify-content: space-between; /* ロゴ、メニュー、検索ボックスの間に均等なスペースを配置 */
-  align-items: center; /* 縦方向の中央に揃える */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
 }
 
@@ -118,4 +90,255 @@ header {
 #logo img {
   width: 150px;
   height: auto;
+}
+
+/* ==================================フォント設定 */
+.google-fonts {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  }
+
+/*====================================画面幅の設定 */
+.inner {
+    width: 1024px;
+    margin: 0 auto;
+  }
+  
+/* ================================メイン画像の設定 */
+
+.main-message {
+  position: relative;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 400px;
+}
+
+/*　風車の画像の設定 */
+.main-message::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/kv.png');
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: center;
+  filter: brightness(70%);
+  z-index: -1;
+}
+
+/* フェイバリット・ビューの文字 */
+.main-message p {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* あなたの「お気に入りの景色」の文字 */
+.main-message h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* メイン「もっと詳しく」ボタンの設定 */
+.main-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  background-color: red; 
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+}
+
+.main-button a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================「おすすめ特集」の設定 */
+
+#reccomend {
+  text-align: center;
+}
+
+/* おすすめ特集の文字 */
+#reccomend h1 {
+  margin: 20px;
+  color: red;
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  font-weight: 400;
+}
+
+/* おすすめ特集の下の文字（フェイバリット・ビューがおすすめする） */
+#reccomend p {
+  margin-bottom: 30px;
+  color: rgba(128, 128, 128, 0.7);
+  font-size: 1.5rem;
+}
+
+/* 画像の設定 */
+#reccomend .flex {
+  margin-bottom: 20px;
+  /* display: flex; */
+  /* gap: 10px; */
+  /* justify-content: space-between; 画像同士の間をあける設定 */
+}
+
+#reccomend .flex img {
+  width: 240px;
+  height: 150px;
+  object-fit: cover; 
+}
+
+/* 画像下の見出しと説明文のdiv */
+#reccomend .flex div {
+  width: 200px; /* 画像と同じ幅に設定 */
+  /* text-align: center; */
+}
+
+/*見出し*/
+#reccomend .flex h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  /* text-align: left; */
+  color: rgba(128, 128, 128, 0.7);
+}
+
+/*説明文*/
+#reccomend .flex p {
+  font-size: 1.4rem;
+  margin: 0;
+  /* text-align: left; */
+  color: rgba(128, 128, 128, 0.7);
+}
+
+/*値段*/
+#reccomend .flex .price {
+  color: red !important; /*!inportant入れないと適用されない*/
+  font-size: 1.5rem;
+  font-weight: bold; /*もっと太いしフォント違う？*/
+  margin-bottom: 5px;
+}
+
+/* 「もっと見る」ボタンの設定 */
+.reccomend-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  background-color: red; 
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+}
+/* ボタンが説明文と被る */
+
+.reccomend-button a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+
+
+/* ==========================「海外ツアーを探す」の設定 */
+#tour-search{
+  background-color: #e5eff7;
+}
+
+/* 「海外ツアーを探す」の文字*/
+#tour-search h1 {
+  margin: 20px;
+  text-align: center;
+  color: black;
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  font-weight: 400;
+}
+
+.map {
+  background-image: url('images/map.png');
+  background-repeat:  no-repeat;                         
+  background-position: left top;                            
+  background-size: contain;                               
+  width: 70%;                                            
+  height: 400px; 
+  margin: 40px;                               
+}
+
+/* 国の名前のボタン */
+.area .north-america {
+  position: absolute;
+  top: 110px;
+  right: 140px;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  background-color: red; 
+  color: #ffffff; /*適用されない*/
+  border: none;
+}
+.area .africa {
+  position: absolute;
+  top: 170px;
+  left: 15px;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  background-color: red; 
+  color: #ffffff; /*適用されない*/
+  border: none;
+}
+.area .asia {
+  position: absolute;
+  top: 150px;
+  left: 200px;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  background-color: red; 
+  color: #ffffff; /*適用されない*/
+  border: none;
+}
+.area .micronesia {
+  position: absolute;
+  top: 159px;
+  right: 280px;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  background-color: red; 
+  color: #ffffff; /*適用されない*/
+  border: none;
+}
+.area .oceania {
+  position: absolute;
+  top: 270px;
+  left: 260px;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  background-color: red; 
+  color: #ffffff; /*適用されない*/
+  border: none;
+}
+.area .latin-america {
+  position: absolute;
+  top: 250px;
+  right: 60px;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  background-color: red; 
+  color: #ffffff; /*適用されない*/
+  border: none;
 }
