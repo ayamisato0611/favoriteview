@@ -68,8 +68,30 @@ button {
 }
 
 
-/*=================================ヘッダー設定 */
 
+
+/*=================================デフォルト設定 */
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  }
+
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .inner {
+      width: 1024px;
+      margin: 0 auto;
+  }
+
+
+  /*=================================ヘッダー設定 */
 header {
   display: flex;
   justify-content: space-between;
@@ -92,20 +114,7 @@ header {
   height: auto;
 }
 
-/* ==================================フォント設定 */
-.google-fonts {
-  font-family: "Noto Sans JP", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  }
 
-/*====================================画面幅の設定 */
-.inner {
-    width: 1024px;
-    margin: 0 auto;
-  }
-  
 /* ================================メイン画像の設定 */
 
 .main-message {
@@ -228,9 +237,9 @@ header {
 
 /*値段*/
 #reccomend .flex .price {
-  color: red !important; /*!inportant入れないと適用されない*/
+  color: red;
   font-size: 1.5rem;
-  font-weight: bold; /*もっと太いしフォント違う？*/
+  font-weight: bold; /*見本はもっと太いしフォント違う？*/
   margin-bottom: 5px;
 }
 
@@ -261,16 +270,18 @@ header {
   background-color: #e5eff7;
 }
 
+
 /* 「海外ツアーを探す」の文字*/
 #tour-search h1 {
   margin: 20px;
   text-align: center;
-  color: black;
+  color: rgba(128, 128, 128, 0.7);
   font-size: 4rem;
   letter-spacing: 0.3rem;
   font-weight: 400;
 }
 
+/* マップ画像の設定 */
 .map {
   background-image: url('images/map.png');
   background-repeat:  no-repeat;                         
@@ -342,3 +353,118 @@ header {
   color: #ffffff; /*適用されない*/
   border: none;
 }
+
+/* フォームの設定 */
+.tour-form {
+  width: 30%;          
+  position: right top;
+  padding: 20px;          
+  box-sizing: border-box;  
+}
+
+/* フォーム内要素のスタイリング */
+.tour-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.tour-form label,
+.tour-form select,
+.tour-form input,
+.tour-form button {
+  margin-bottom: 15px;     /* 各フォーム要素の下に余白を追加 */
+}
+
+.tour-search-button {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  background-color: red; 
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+}
+/* 問題点検索欄をマップの横にできない */
+
+
+/* ===========================-スタッフの海外旅行記 */
+
+/* 見出し */
+#travelblog h1 {
+  margin: 40px;
+  text-align: center;
+  color: rgba(128, 128, 128, 0.7);
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  font-weight: 400;
+}
+
+/* 画像と文字の配置設定 */
+#travelblog {
+  padding: 20px;
+}
+
+#travelblog .flex {
+  display: flex;
+  flex-wrap: wrap;    
+  gap: 20px; 
+}
+
+#travelblog .flex > div {
+  display: flex;
+  flex-direction: row; 
+  align-items: flex-start; 
+  gap: 20px; 
+  flex: 1 1 calc(33.333% - 40px);
+  box-sizing: border-box;
+}
+
+/*画像 */
+#travelblog .flex img {
+  width: 240px;
+  height: 150px;
+  object-fit: cover; 
+}
+  
+  /* 文字設定 */
+
+  #travelblog .flex .text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+#travelblog h2 {
+  color: rgba(128, 128, 128, 0.7);
+  font-size: 1.2rem;
+  letter-spacing: 0.3rem;
+  font-weight: bold; /* 適用されない*/
+  margin: 0;
+}
+  
+#travelblog p {
+  color: rgba(128, 128, 128, 0.7);
+  font-size: 1.5rem;
+  margin: 0;
+  white-space: normal;
+}
+
+#travelblog .pic {
+  color: rgba(128, 128, 128, 0.7);
+  text-align: right;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* 「もっと見る」ボタン */
+.travelblog-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  background-color: red; 
+  color: #ffffff;  /* 適用されない*/
+  border: none;
+  border-radius: 5px;
+  }
+
