@@ -1,6 +1,7 @@
 .map {
   background-image: url('./images/map.png');
-  background-repeat:  no-repeat;                         /* 画像の繰り返しを指定  */                 background-position: left;                     /* 画像の表示位置を指定  */
+  background-repeat:  no-repeat;                         /* 画像の繰り返しを指定  */
+  background-position: left;                             /* 画像の表示位置を指定  */
   background-size:contain;                               /* 画像のサイズを指定    */
   width:100%;                                            /* 横幅のサイズを指定    */
   height:400px;                                          /* 縦幅のサイズを指定    */
@@ -8,8 +9,113 @@
 
 .main-message {
   background-image: url('./images/kv.png');
-  background-repeat:  no-repeat;                         /* 画像の繰り返しを指定  */                 background-position: left;                     /* 画像の表示位置を指定  */
-  /* background-size:contain;                               画像のサイズを指定    */
+  background-repeat:  no-repeat;                         /* 画像の繰り返しを指定  */
+  background-position: left;                             /* 画像の表示位置を指定  */
+  background-size:contain;                               /*画像のサイズを指定    */
   width:100%;                                            /* 横幅のサイズを指定    */
   height:400px;                                          /* 縦幅のサイズを指定    */
+}
+
+.flex {
+  display: flex;
+}
+
+.google-fonts {
+  /* ここにGoogle Fontsを指定します */
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  }
+  
+
+  /*================================= リセット */
+html {
+	font-size: 62.5%; /* font-sizeで10pxを1remで指定するための準備 */
+}
+
+body { /* ウインドウの周囲に空きができるブラウザのスタイルをリセット */
+	margin: 0;
+	padding: 0;
+}
+
+body * { /* bodyのすべての子要素（全称セレクタ） */
+	box-sizing: border-box; /* widthとheightプロパティにpaddingを含む */
+	position: relative; /* position: absolute;を指定する時に毎回親要素にrelativeを指定しなくても良いように */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0; /* 要素の上下に空きができるブラウザのスタイルをリセット */
+}
+
+p,
+ul,
+ol,
+dl,
+dd {
+	margin: 0; /* 要素の上下左右に空きができるブラウザのスタイルをリセット */
+	padding: 0; /* 要素の上下左右に空きができるブラウザのスタイルをリセット */
+}
+
+ul,
+ol {
+	list-style-type: none; /* リスト項目の黒丸や数字を表示しない */
+}
+
+figure {
+	vertical-align: bottom; /* 要素の上下に空きができるブラウザのスタイルをリセット */
+	line-height: 1;
+	margin: 0;
+}
+
+img {
+	width: 100%; /* 親要素のwidthプロパティを指定すれば同じ縦横比でimgを表示する */
+	height: auto; /* 親要素のwidthプロパティを指定すれば同じ縦横比でimgを表示する */
+	vertical-align: bottom; /* 要素の上下に空きができるブラウザのスタイルをリセット */
+}
+
+a,
+input[type='submit'],
+input[type='button'] {
+	transition: all .3s; /* マウスオーバーの変化をふわっとさせる */
+	text-decoration: none; /* アンダーラインを非表示 */
+}
+
+a:hover,
+input[type='submit']:hover,
+input[type='button']:hover {
+	opacity: .7; /* マウスオーバーでちょっと色を薄くする */
+}
+
+input,
+select,
+button {
+	appearance: none;/* ブラウザのスタイルをリセット */
+}
+
+header {
+  display: flex; /* 横並びにする */
+  justify-content: space-between; /* ロゴ、メニュー、検索ボックスの間に均等なスペースを配置 */
+  align-items: center; /* 縦方向の中央に揃える */
+  padding: 10px 20px;
+}
+
+.header-menu li {
+  width: 140px;
+  text-align: center;
+  display: inline-block; 
+}
+
+.header-menu li a {
+  text-decoration: none;
+}
+
+#logo img {
+  width: 150px;
+  height: auto;
 }
