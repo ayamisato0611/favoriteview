@@ -13,31 +13,34 @@
 
 <body>
   <header>
-    <a href="index.html" id="logo">
-    <img src="images/logo_header.png" alt="トップページに戻る">
-    </a>
-    <nav class="header-menu">
-      <ul>
-        <li><a href="#">ホーム</a></li>
-        <li><a href="#reccomend">おすすめ特集</a></li>
-        <li><a href="#travelblog">スタッフの海外旅行記</a></li>
-        <li><a href="#service">特典・サービス</a></li>
-        <li><a href="#contact">お問い合わせ</a></li>
-      </ul>
-    </nav>
+    <div class="inner">
+      <a href="index.html" id="logo">
+      <img src="images/logo_header.png" alt="トップページに戻る">
+      </a>
+      <nav class="header-menu">
+        <ul>
+          <li><a href="#">ホーム</a></li>
+          <li><a href="#reccomend">おすすめ特集</a></li>
+          <li><a href="#travelblog">スタッフの海外旅行記</a></li>
+          <li><a href="#service">特典・サービス</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
 
-    <form>
-      <input type="search" name="search"><!-- CSSで非表示 -->
-      <input type="image" src="images/ico_zoom.png" alt="サイト内検索">
-    </form>
+      <form>
+        <input type="search" name="search">
+        <input type="image" src="images/ico_zoom.png" alt="サイト内検索">
+      </form>
+    </div>
   </header>
   
   <main>
     <article>
       <div class="main-message">
-        <p>フェイバリット・ビュー</p>
-        <h1>あなたの「お気に入りの景色」を見つけてください</h1>
-        <button class="main-button" type="button"><a href="#">もっと詳しく</a></button>
+        <div class="inner">
+          <p>あなたの<span>「お気に入りの景色」<small>フェイバリット・ビュー</small></span>を見つけてください</p>
+          <button type="button"><a href="#">もっと詳しく</a></button>
+        </div>
       </div>
 
       <section id="reccomend">
@@ -78,9 +81,7 @@
             </p>
           </div>
         </div>
-        <div>
         <button class="reccomend-button" type="button"><a href="#">もっと見る</a></button>
-        </div>
         </div>
       </section>
 
@@ -127,7 +128,7 @@
 
               <label for="keyword">キーワードで探す</label>
               <input type="search" id="keyword" name="keyword" placeholder="行きたい国や地名を入力してください">
-              <button class="tour-search-button" type="submit">検索</button>
+              <button type="submit">検　索</button>
             </form>
           </div>
         </div>
@@ -187,7 +188,7 @@
             </div>
           </div>
         </div>
-        <button class="travelblog-button" type="button"><a href="#">もっと見る</a></button>
+        <button type="button"><a href="#">もっと見る</a></button>
         </div>
       </section>
     </article>
@@ -195,38 +196,45 @@
 
   <footer>
     <div class="inner">
-      <a href="index.html" id="logo">
-        <img src="images/logo_footer.png" alt="トップページに戻る">
-        </a>
-      <ul>
-        <li>〒151-0051 東京都渋谷区千駄ヶ谷 2-15-62</li>
-        <li>03-5690-9842</li>
-        <li>favo_view@co.jp</li>
-      </ul>
-      <ul class="sns">
-        <li><img src="images/ico_fb.png" alt="facebook"></li>
-        <li><img src="images/ico_tw.png" alt="twitter"></li>
-        <li><img src="images/ico_ins.png" alt="instagram"></li>
-      </ul>
+      <div class="footer01">
+        <a href="index.html" id="logo">
+          <img src="images/logo_footer.png" alt="トップページに戻る">
+          </a>
+        <ul>
+          <li class="address">〒151-0051 東京都渋谷区千駄ヶ谷 2-15-62</li>
+          <li class="tel">03-5690-9842</li>
+          <li class="mail">favo_view@co.jp</li>
+        </ul>
+        <ul class="sns">
+          <li><img src="images/ico_fb.png" alt="facebook"></li>
+          <li><img src="images/ico_tw.png" alt="twitter"></li>
+          <li><img src="images/ico_ins.png" alt="instagram"></li>
+        </ul>
+      </div>
 
-      <nav>
-        <ul class="footer01">
-          <li><a href="#reccomend">おすすめ特集</a></li>
-          <li><a href="#travelblog">スタッフの海外旅行記</a></li>
-          <li><a href="#">特典・サービス</a></li>
-          <li><a href="#">お問い合わせ</a></li>
-        </ul>
-        <ul class="footer02">
-          <li><a href="support">トラベルサポート</a></li>
-          <li><a href="insurance">海外旅行保険</a></li>
-          <li><a href="policy">保険募集に関する勧誘方針及び販売方法</a></li>
-          <li><a href="safety">外務省海外安全情報</a></li>
-          <li><a href="health">厚生労働省感染情報</a></li>
-          <li><a href="privacy">個人情報保護方針</a></li>
-        </ul>
+      <nav class="footer-nav">
+        <div class="footer02">
+          <ul>
+            <li><a href="#reccomend">おすすめ特集</a></li>
+            <li><a href="#travelblog">スタッフの海外旅行記</a></li>
+            <li><a href="#">特典・サービス</a></li>
+            <li><a href="#">お問い合わせ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer03">
+          <ul>
+            <li><a href="support">トラベルサポート</a></li>
+            <li><a href="insurance">海外旅行保険</a></li>
+            <li><a href="policy">保険募集に関する勧誘方針及び販売方法</a></li>
+            <li><a href="safety">外務省海外安全情報</a></li>
+            <li><a href="health">厚生労働省感染情報</a></li>
+            <li><a href="privacy">個人情報保護方針</a></li>
+          </ul>
+        </div>
       </nav>
-      <p class="copyright">&copy; 2018 Favorite view. All Rights Reserved.</p>
     </div>
-    </footer>
+    <p class="copyright">&copy; 2018 Favorite view. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>

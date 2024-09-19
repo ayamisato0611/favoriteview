@@ -75,8 +75,10 @@ button {
 body {
   font-family: "Noto Sans JP", sans-serif;
   font-optical-sizing: auto;
+  font-size: 1.3rem;
   font-weight: 400;
   font-style: normal;
+  color: #444;
   }
 
   .flex {
@@ -86,17 +88,48 @@ body {
   }
   
   .inner {
-      width: 1024px;
-      margin: 0 auto;
+    width: 1024px;
+    margin: 0 auto;
   }
 
+  section h1 {
+    font-size: 4.2rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin: 0 0 46px;
+  }
+
+  /* ボタンの設定 */
+button { /* ボタンのブラウザのスタイルをリセット */ 
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+button a,
+button[type='submit'] { /* 全てのボタンの見た目 */
+  color: #ffffff;
+  background-color: #ff0000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  width: 100px;
+  height: 43px;
+  border-radius: 5px;
+}
 
   /*=================================ヘッダー設定 */
-header {
+header .inner{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  height: 90px;
+}
+
+#logo img {
+  width: 255px;
 }
 
 .header-menu li {
@@ -106,252 +139,175 @@ header {
 }
 
 .header-menu li a {
-  text-decoration: none;
+  color: #444;
 }
 
-#logo img {
-  width: 150px;
-  height: auto;
+header input[type='search'] {
+  display: none;
 }
-
 
 /* ================================メイン画像の設定 */
 
 .main-message {
-  position: relative;
-  display: flex;
-  flex-direction: column; 
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 400px;
+  width: 100%;
+  height: 480px;
+  background: url(images/kv.png); no-repeat center center / cover;
 }
 
-/*　風車の画像の設定 */
 .main-message::before {
   content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('images/kv.png');
-  background-repeat: no-repeat; 
-  background-size: cover;
-  background-position: center;
-  filter: brightness(70%);
-  z-index: -1;
+  display: block;
+  background: rgba(0,0,0,.3);
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
-/* フェイバリット・ビューの文字 */
-.main-message p {
-  font-size: 1.5rem;
-  color: #ffffff;
-  margin: 0;
+.main-message .inner {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* あなたの「お気に入りの景色」の文字 */
-.main-message h1 {
-  font-size: 4rem;
+.main-message p {
+  font-size: 4.2rem;
   font-weight: 400;
   color: #ffffff;
-  margin: 0;
 }
 
-/* メイン「もっと詳しく」ボタンの設定 */
-.main-button {
+/* フェイバリット・ビューの文字 */
+.main-message p small {
+  font-size: 1.6rem; 
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  font-size: 1.5rem;
-  padding: 10px 20px;
-  background-color: red; 
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
+  top: -20px; 
+  left: 50%; 
+  transform: translateX(-50%);
 }
 
-.main-button a {
-  color: inherit;
-  text-decoration: none;
-}
-
+.main-message button {
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+} 
 
 /* =========================「おすすめ特集」の設定 */
 
 #reccomend {
-  text-align: center;
+  padding: 50px 0 140px;
 }
 
 /* おすすめ特集の文字 */
 #reccomend h1 {
-  margin: 20px;
+  margin: 0 0 30px;
   color: red;
-  font-size: 4rem;
-  letter-spacing: 0.3rem;
+  font-size: 4.2rem;
+  letter-spacing: 0.1rem;
   font-weight: 400;
+  text-align: center;
 }
 
 /* おすすめ特集の下の文字（フェイバリット・ビューがおすすめする） */
-#reccomend p {
+#reccomend h1 + p {
   margin-bottom: 30px;
-  color: rgba(128, 128, 128, 0.7);
-  font-size: 1.5rem;
+  color: #a8a8a8;
+  text-align: center;
+}
+
+#reccomend .flex {
+  margin-bottom: 40px;
+}
+
+/* 各コンテンツ */
+#reccomend .flex div {
+  width: 240px;
 }
 
 /* 画像の設定 */
-#reccomend .flex {
-  margin-bottom: 20px;
-  /* display: flex; */
-  /* gap: 10px; */
-  /* justify-content: space-between; 画像同士の間をあける設定 */
-}
-
 #reccomend .flex img {
-  width: 240px;
+  width: 100%;
   height: 150px;
   object-fit: cover; 
-}
-
-/* 画像下の見出しと説明文のdiv */
-#reccomend .flex div {
-  width: 200px; /* 画像と同じ幅に設定 */
-  /* text-align: center; */
+  display: block;
+  margin: 0 0 10px;
 }
 
 /*見出し*/
 #reccomend .flex h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  font-weight: 400;
   margin: 0;
-  /* text-align: left; */
-  color: rgba(128, 128, 128, 0.7);
-}
-
-/*説明文*/
-#reccomend .flex p {
-  font-size: 1.4rem;
-  margin: 0;
-  /* text-align: left; */
-  color: rgba(128, 128, 128, 0.7);
 }
 
 /*値段*/
 #reccomend .flex .price {
   color: red;
-  font-size: 1.5rem;
-  font-weight: bold; /*見本はもっと太いしフォント違う？*/
-  margin-bottom: 5px;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 /* 「もっと見る」ボタンの設定 */
-.reccomend-button {
+#reccomend-button {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  font-size: 1.5rem;
-  padding: 10px 20px;
-  background-color: red; 
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
+  bottom: -90px;
+  right: 0;
 }
-/* ボタンが説明文と被る */
-
-.reccomend-button a {
-  color: inherit;
-  text-decoration: none;
-}
-
-
 
 
 /* ==========================「海外ツアーを探す」の設定 */
 #tour-search{
   background-color: #e5eff7;
-}
-
-
-/* 「海外ツアーを探す」の文字*/
-#tour-search h1 {
-  margin: 20px;
-  text-align: center;
-  color: rgba(128, 128, 128, 0.7);
-  font-size: 4rem;
-  letter-spacing: 0.3rem;
-  font-weight: 400;
+  padding: 50px 0;
 }
 
 /* マップ画像の設定 */
 .map {
   background-image: url('images/map.png');
   background-repeat:  no-repeat;                         
-  background-position: left top;                            
+  background-position: left center;                            
   background-size: contain;                               
   width: 70%;                                            
-  height: 400px; 
-  margin: 40px;                               
+  height: 400px;
+}
+
+.area li a {
+  color: #fff;
+  background: #ff0000;
+  display: block;
+  padding: 5px 10px;
+  position: absolute;
 }
 
 /* 国の名前のボタン */
-.area .north-america {
-  position: absolute;
+.area .north-america a {
   top: 110px;
   right: 140px;
-  font-size: 1.2rem;
-  padding: 5px 10px;
-  background-color: red; 
-  color: #ffffff; /*適用されない*/
-  border: none;
 }
-.area .africa {
-  position: absolute;
-  top: 170px;
-  left: 15px;
-  font-size: 1.2rem;
-  padding: 5px 10px;
-  background-color: red; 
-  color: #ffffff; /*適用されない*/
-  border: none;
+.area .africa a {
+  top: 110px;
+  right: 140px;
 }
-.area .asia {
-  position: absolute;
+.area .asia a {
   top: 150px;
   left: 200px;
-  font-size: 1.2rem;
-  padding: 5px 10px;
-  background-color: red; 
-  color: #ffffff; /*適用されない*/
-  border: none;
 }
 .area .micronesia {
-  position: absolute;
   top: 159px;
   right: 280px;
-  font-size: 1.2rem;
-  padding: 5px 10px;
-  background-color: red; 
-  color: #ffffff; /*適用されない*/
-  border: none;
 }
-.area .oceania {
-  position: absolute;
+
+.area .oceania a {
   top: 270px;
   left: 260px;
-  font-size: 1.2rem;
-  padding: 5px 10px;
-  background-color: red; 
-  color: #ffffff; /*適用されない*/
-  border: none;
 }
-.area .latin-america {
-  position: absolute;
+
+.area .latin-america a {
   top: 250px;
   right: 60px;
-  font-size: 1.2rem;
-  padding: 5px 10px;
-  background-color: red; 
-  color: #ffffff; /*適用されない*/
-  border: none;
 }
 
 /* フォームの設定 */
@@ -375,96 +331,151 @@ header {
   margin-bottom: 15px;     /* 各フォーム要素の下に余白を追加 */
 }
 
-.tour-search-button {
-  font-size: 1.5rem;
-  padding: 10px 20px;
-  background-color: red; 
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
+.tour-form-button {
+  width: 100%;
 }
-/* 問題点検索欄をマップの横にできない */
+
 
 
 /* ===========================-スタッフの海外旅行記 */
 
-/* 見出し */
-#travelblog h1 {
-  margin: 40px;
-  text-align: center;
-  color: rgba(128, 128, 128, 0.7);
-  font-size: 4rem;
-  letter-spacing: 0.3rem;
-  font-weight: 400;
-}
-
 /* 画像と文字の配置設定 */
 #travelblog {
-  padding: 20px;
-}
-
-#travelblog .flex {
-  display: flex;
-  flex-wrap: wrap;    
-  gap: 20px; 
+  padding: 50px 0 140px;
 }
 
 #travelblog .flex > div {
   display: flex;
-  flex-direction: row; 
-  align-items: flex-start; 
-  gap: 20px; 
-  flex: 1 1 calc(33.333% - 40px);
-  box-sizing: border-box;
+  width: 330px;
+  justify-content: space-between;
+  margin: 0 0 30px;
 }
 
 /*画像 */
 #travelblog .flex img {
-  width: 240px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   object-fit: cover; 
 }
   
   /* 文字設定 */
 
   #travelblog .flex .text {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  width: 218px;
   }
 
 #travelblog h2 {
-  color: rgba(128, 128, 128, 0.7);
-  font-size: 1.2rem;
-  letter-spacing: 0.3rem;
-  font-weight: bold; /* 適用されない*/
+  font-size: 1.3rem;
+  font-weight: bold;
   margin: 0;
-}
-  
-#travelblog p {
-  color: rgba(128, 128, 128, 0.7);
-  font-size: 1.5rem;
-  margin: 0;
-  white-space: normal;
 }
 
 #travelblog .pic {
-  color: rgba(128, 128, 128, 0.7);
-  text-align: right;
-  font-size: 1.5rem;
-  margin: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 /* 「もっと見る」ボタン */
 .travelblog-button {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  font-size: 1.5rem;
-  padding: 10px 20px;
-  background-color: red; 
-  color: #ffffff;  /* 適用されない*/
-  border: none;
-  border-radius: 5px;
+  bottom: -73px;
+  right: 0;
   }
 
+
+/* ================================フッター設定 */
+footer {
+  background-color: #2c3e4a;
+  padding: 50px 0;
+}
+
+footer .inner {
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer01 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer01 {
+  color: #fff;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* navのリストのテキストの前に■をつける */
+.footer-nav ul {
+  list-style-type: square;
+  margin-left: 20px;
+}
+
+/* footer02,03の文字の色 */
+footer ul li a {
+  color: #7da5bf;
+}
+
+/* アイコン追加 */
+.footer01 ul li::before {
+  content: '';
+  position: absolute;
+  left: 0; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px; 
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.footer01 ul li.tel::before {
+  background-image: url('images/ico_phone.png'); 
+}
+
+/* メールアイコン */
+.footer01 ul li.mail::before {
+  background-image: url('images/ico_mail.png'); 
+}
+/* 問題点　アイコンが文字と被る */
+
+
+
+  /* SNSアイコンのスタイル */
+.sns {
+  display: flex;
+  gap: 1px;
+}
+
+/* アイコン白背景 */
+.sns li {
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.sns img {
+  width: 9px;
+  height: 17px;
+}
+
+/* 問題点　アイコンの大きさおかしい・・ デザインカンプを見て背景の正方形のサイズとアイコンの100のサイズに設定したがアイコン伸びてる？*/
+
+
+
+/* コピーライトのスタイル */
+p.copyright {
+  margin-top: 20px;
+  text-align: center;
+  color: #cccccc;
+}
