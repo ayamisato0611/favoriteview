@@ -99,37 +99,55 @@
               <li class="latin-america"><a href="#">中南米</a></li>
             </ul>
           </div>
+
           <div class="tour-form"> <!-- 検索フォーム-->
             <form action="#">
-              <label for="departure">出発地</label>
-              <select id="departure" name="departure">
-                <option value="tokyo-narita">東京（成田国際空港）</option>
-                <option value="tokyo-haneda">東京（羽田国際空港）</option>
-                <option value="aichi">愛知（中部国際空港）</option>
-                <option value="osaka">大阪（関西国際空港）</option>
-                <option value="fukuoka">福岡（福岡空港）</option>
-                <option value="hokkaido">北海道（新千歳空港）</option>
-                <option value="okinawa">沖縄（那覇空港）</option>
-              </select>
+              <div class="form-group">
+                <label for="departure">出発地</label>
+                <select id="departure" name="departure">
+                  <option value="tokyo-narita">東京（成田国際空港）</option>
+                  <option value="tokyo-haneda">東京（羽田国際空港）</option>
+                  <option value="aichi">愛知（中部国際空港）</option>
+                  <option value="osaka">大阪（関西国際空港）</option>
+                  <option value="fukuoka">福岡（福岡空港）</option>
+                  <option value="hokkaido">北海道（新千歳空港）</option>
+                  <option value="okinawa">沖縄（那覇空港）</option>
+                </select>
+                <span class="arrow-text">▼</span> <!--矢印の設定の方法がわからない-->
+              </div>
 
-              <label for="date">出発希望日</label>
-              <input type="date" id="date" name="date">
+              <div class="form-group">
+                <label for="date">出発希望日</label>
+                <input type="date" id="date" name="date">
+              </div>
 
-              <label for="destination">行き先</label>
-              <select class="destination" name="destination">
-                <option value="">選択してください</option>
-                <option value="north-america">北アメリカ</option>
-                <option value="africa">アフリカ・中東</option>
-                <option value="asia">アジア</option>
-                <option value="micronesia">ミクロネシア</option>
-                <option value="oceania">オセアニア</option>
-                <option value="latin-america">中南米</option>
-              </select>
+              <div class="form-group">
+                <label for="destination">行き先</label>
+                <select class="destination" name="destination">
+                  <option value="">選択してください</option>
+                  <option value="north-america">北アメリカ</option>
+                  <option value="africa">アフリカ・中東</option>
+                  <option value="asia">アジア</option>
+                  <option value="micronesia">ミクロネシア</option>
+                  <option value="oceania">オセアニア</option>
+                  <option value="latin-america">中南米</option>
+                </select>
+                <span class="arrow-text">▼</span> <!--矢印の設定の方法がわからない-->
+              </div>
 
-              <label for="keyword">キーワードで探す</label>
-              <input type="search" id="keyword" name="keyword" placeholder="行きたい国や地名を入力してください">
-              <button type="submit">検　索</button>
-            </form>
+              <div class="form-group">
+                <label for="keyword">キーワードで探す</label>
+                <div class="search-icon">
+                  <input type="search" id="keyword" name="keyword" placeholder="行きたい国や地名を入力してください">
+                  <span class="icon-zoom">
+                    <img src="images/ico_zoom.png" alt="zoom icon">
+                  </span>
+                </div>
+              </div>
+
+                <button type="submit">検　索</button>
+
+              </form>
           </div>
         </div>
         </div>

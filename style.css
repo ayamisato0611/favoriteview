@@ -270,8 +270,7 @@ header input[type='search'] {
   background-repeat:  no-repeat;                         
   background-position: left center;                            
   background-size: contain;                               
-  width: 70%;                                            
-  height: 400px;
+  width: 660px;                                            
 }
 
 .area li a {
@@ -310,31 +309,90 @@ header input[type='search'] {
   right: 60px;
 }
 
-/* フォームの設定 */
+/* ===============フォームの設定 */
 .tour-form {
-  width: 30%;          
-  position: right top;
-  padding: 20px;          
+  width: 300px;  /*フォーム全体の幅*/
+  position: right;
+  padding: 20px;    /*必要?*/      
   box-sizing: border-box;  
 }
 
-/* フォーム内要素のスタイリング */
-.tour-form form {
+.tour-form .form-group {
   display: flex;
   flex-direction: column;
-}
+} 
 
 .tour-form label,
 .tour-form select,
 .tour-form input,
 .tour-form button {
-  margin-bottom: 15px;     /* 各フォーム要素の下に余白を追加 */
+  margin-bottom: 21px;     /* 各フォーム要素の下に余白を追加 */
 }
+/* 問題点
+虫眼鏡の設定をしたら適用されなくなった */
+
+
+/* フォームのlabel上の文字 */
+.form-group label {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.form-group select,
+.form-group input[type="date"],
+.form-group input[type="search"] {
+  width: 100%;
+  padding: 14px;
+  font-size: 13px;
+  border: none;
+}
+
+/* 選択やじるし */
+
+/*======= カレンダーアイコンの変更 */
+input[type="date"] {
+  position: relative;
+  padding-left: 30px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: url('images/ico_calendar.png') no-repeat center;
+  background-size: contain;
+  border: none; /* デフォルトのカレンダーアイコンを隠す */
+  width: 16px;
+}
+
+/* =====虫眼鏡アイコン設定 */
+.search-icon {
+  position: relative;
+}
+
+.search-icon input {
+  width: 100%;
+  padding-left: 40px;
+  box-sizing: border-box;
+}
+
+.icon-zoom {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.icon-zoom img {
+  width: 20px;
+  height: 20px;
+}
+
+/* 問題点　文字とアイコンが被る */
+
 
 .tour-form button {
   width: 100%;
 }
-
 
 
 /* ===========================-スタッフの海外旅行記 */
