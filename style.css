@@ -536,3 +536,303 @@ p.copyright {
   color: #cccccc;
   border-top: 1px solid rgba(255, 255, 255, .1);
 }
+
+/* SPメニュー非表示 */
+.menu_wrapper {
+  display: none;
+}
+
+
+
+/* ======================================================スマホ対応 */
+
+/* 以下の例では、画面幅が767px以下のときにスタイルが適用されます */
+@media screen and (max-width: 650px) {
+
+.inner {
+  width: 100%;
+  max-width: 610px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+  
+/* ====================ヘッダーメニュー非表示*/
+.header-menu{
+  display: none;
+}
+
+/* 幅を指定 */
+.ham {
+  width: 600px;
+  margin: 0 auto;
+}
+
+/* ===========ハンバーガーメニュー */
+
+/*問題点　ハンバーガーメニューが右に表示できない*/
+
+/* 枠 */
+.ham {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+  background-color: #fff;
+	border: 1px solid #656565;
+  border-radius: 5px;
+}  
+
+/* 三本線 */
+.ham_line {
+	position: absolute;
+	left: 6px;
+	width: 26px;
+	height: 2px;
+	background-color: #656565;
+}
+
+.ham_line1 {
+	top: 10px;
+}
+.ham_line2 {
+	top: 18px;
+}
+.ham_line3 { 
+	top: 26px;
+}
+
+.ham_line {
+	transition: all 0.3s;
+}
+
+.clicked .ham_line1 {
+	transform: rotate(45deg);
+	top: 20px;
+}
+.clicked .ham_line2 {
+	width: 0px;
+}
+.clicked .ham_line3 {
+	transform: rotate(-45deg);
+	top: 20px;
+}
+.menu_wrapper {
+  display: none; /* 初期状態ではメニューを非表示 */
+  position: fixed;
+  top: 0;
+  right: 0;
+	width: 300px;
+	height: 300px;
+	background-color: #ad795e;
+  transition: all 0.3s;
+  z-index: 10000;
+}
+
+.show {
+  display: block; /* ハンバーガーメニューをクリックするとメニュー表示 */
+}
+
+.menu ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.menu ul li {
+  margin: 20px 0;
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ??? */
+.clicked .menu {  
+	left: 8px;
+}
+
+
+/* ====================SP ロゴ設定 */
+#logo img {
+  width: 340px;
+}
+
+/*問題点 位置 */
+#search-form input[type="image"] {
+  display: block;
+  top: 28px;
+  left: 0;
+  width: 35px;
+}
+
+/* メインの画像 */
+.main-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 251px;
+  background: url(images/kv.png) no-repeat center center / cover;
+}
+
+.main-message::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: rgba(0,0,0,.3);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.main-message .inner {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 問題　文字の位置関係が固定されない（画面幅650px以下にすると文字位置がバラバラになる） */
+/* あなたの「お気に入りの景色」の文字 */
+.main-message p {
+  text-align: center;
+  font-size: 3.6rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;          
+  padding: 0 10px; 
+}
+
+/* フェイバリット・ビューの文字 */
+.main-message p small {
+  white-space: nowrap;
+  display: block;
+  font-size: 2.0rem; 
+  position: absolute;
+  top: -30px; 
+  left: 50%; 
+  transform: translateX(-50%);
+}
+
+/* ボタンの設定 */
+button { /* ボタンのブラウザのスタイルをリセット */ 
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+button a,
+button[type='submit'] { /* 全てのボタンの見た目 */
+  color: #ffffff;
+  background-color: #ff0000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4rem;
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.main-message button {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+} 
+
+/* =========================「おすすめ特集」の設定 */
+
+#reccomend {
+  padding: 50px 0 140px;
+}
+
+/* おすすめ特集の文字 */
+#reccomend h1 {
+  margin: 0 0 30px;
+  color: red;
+  font-size: 4.2rem;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+
+
+/* =========================「おすすめ特集」の設定 */
+
+/* ??? */
+#reccomend {
+  padding: 50px 0 140px;
+}
+
+/* おすすめ特集の文字 */
+#reccomend h1 {
+  margin: 0 0 30px;
+  color: red;
+  font-size: 4.2rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+#reccomend p {
+  margin-top: 30px;
+  color: #a8a8a8;
+  font-size: 2.4rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* わからないのでPC設定のまま */
+#reccomend .flex {
+  margin-bottom: 40px;
+}
+
+/* わからないのでPC設定のまま */
+/* 各コンテンツ */
+#reccomend .flex div {
+  width: 240px;
+}
+
+/* 画像の設定 */
+#reccomend .flex img {
+  width: 285px;
+  height: 188px;
+  object-fit: cover; 
+  display: block;
+  margin: 0 0 9px;
+}
+
+
+/* SP用のPSデザインカンプのフォントが平成角ゴシックとかヒラギノ角ゴ ProNになってるのにここで気づきました。これはNoto Sans JPで指定しているので、設定しても大きさとか異なってしまう気がします。 */
+/*見出し*/
+#reccomend .flex h2 {
+  font-size: 2.7rem;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+
+/*値段*/
+#reccomend .flex .price {
+  color: red;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+#reccomend .flex p {
+  font-size: 2.4rem;  
+  color: #444444;  
+  margin: 0 0 15px; 
+}
+
+/* 「もっと見る」ボタンの設定 */
+.reccomend-button {
+  position: absolute;
+  bottom: -90px;
+  right: 0;
+}
+
+}

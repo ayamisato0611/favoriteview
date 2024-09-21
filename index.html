@@ -26,13 +26,41 @@
           <li><a href="#contact">お問い合わせ</a></li>
         </ul>
       </nav>
-
-      <form>
+      <form id="search-form"> <!--SP設定用にid追加-->
         <input type="search" name="search">
         <input type="image" src="images/ico_zoom.png" alt="サイト内検索">
       </form>
     </div>
+
+
+    <!--スマホ用メニューボタン-->
+    <div class="ham" id="ham">
+      <span class="ham_line ham_line1"></span>
+      <span class="ham_line ham_line2"></span>
+      <span class="ham_line ham_line3"></span>
+    </div>
+
+    <div class="menu_wrapper" id="menu_wrapper">
+      <div class="menu">
+          <ul>
+              <li><a href="#1">おすすめ特集</a></li>
+              <li><a href="#2">スタッフの海外旅行記</a></li>
+              <li><a href="#3">特典・サービス</a></li>
+              <li><a href="#3">お問い合わせ</a></li>
+          </ul>
+      </div>
+    </div>
   </header>
+
+<!--このサイトを参考に追加しました　https://manabiact.com/make-hamburger-menu/-->
+      <script>
+        const ham = document.getElementById('ham');
+        const menu_wrapper = document.getElementById('menu_wrapper');
+        ham.addEventListener('click', function() {
+       	ham.classList.toggle('clicked');
+	      menu_wrapper.classList.toggle('show');
+        });
+      </script>
   
   <main>
     <article>
@@ -132,7 +160,7 @@
                   </select>
                 </dd>
                 <dt><label for="keyword">キーワードで探す</label></dt>
-                <dd class="keyword"></dd>
+                <dd class="keyword">
 									<input type="search" id="keyword" name="keyword" placeholder="行きたい国や地名を入力してください">
 								</dd>
 							</dl>
@@ -168,7 +196,7 @@
             <div class="text">
               <h2>アイスランド</h2>
               <p>セリャランスフォス「は、透けるような滝でまさに絶景でした。</p>
-              <p clas="pic">(ヨーロッパ担当スタッフK)</p>
+              <p class="pic">(ヨーロッパ担当スタッフK)</p>
             </div>
           </div>
           <div>
